@@ -92,12 +92,12 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;op
 .hero h1 em{font-style:italic;font-weight:400}
 .strike{position:relative;display:inline-block;white-space:nowrap}
 .strike .old{color:var(--muted);transition:color 1s}
+.rewrite{display:block;width:max-content;max-width:100%;margin-top:.12em;font-family:var(--f-hand);font-weight:700;font-style:normal;font-size:.78em;line-height:1;letter-spacing:0;color:#9a4038;transform:rotate(-3deg);transform-origin:left center;
+  clip-path:inset(-20% -5% -30% 0);animation:write 1.4s steps(18,end) 1.4s both}
+.rewrite::after{content:"";display:block;height:.09em;margin-top:.04em;width:100%;background:#9a4038;opacity:.35;border-radius:9px;transform:rotate(-1deg)}
 .strike::after{content:"";position:absolute;left:-4%;right:-4%;top:54%;height:.075em;background:var(--gold);border-radius:4px;transform:rotate(-3deg) scaleX(1);transform-origin:left;animation:strike .9s cubic-bezier(.7,0,.2,1) .7s both}
-.strike{margin-top:.28em}
-.strike .new{position:absolute;left:18%;bottom:74%;font-family:var(--f-hand);font-style:normal;color:var(--rose);font-size:0.45em;letter-spacing:0;transform:rotate(-5deg);white-space:nowrap;
-  clip-path:inset(0 0 0 0);animation:write 1.3s steps(16,end) 1.5s both;font-weight:600}
 @keyframes strike{from{transform:rotate(-3deg) scaleX(0)}}
-@keyframes write{from{clip-path:inset(0 100% 0 0)}}
+@keyframes write{from{clip-path:inset(-20% 100% -30% 0)}}
 .hero-lede{max-width:34em;color:var(--muted);font-size:1.1rem}
 .hero-lede strong{color:var(--text);font-weight:500}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
