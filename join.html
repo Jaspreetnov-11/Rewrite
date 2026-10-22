@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Join the Circle — Rewrite the Rules</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta name="description" content="Join Rewrite the Rules community. Connect on WhatsApp instantly or register for the national expansion waitlist.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Join the Circle — Rewrite the Rules">
+<meta property="og:description" content="Join Rewrite the Rules community. Connect on WhatsApp instantly or register for the national expansion waitlist.">
+<meta property="og:image" content="https://www.rewritetherules.in/assets/meetup.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Hanken+Grotesk:wght@400;500;600&family=DM+Mono:wght@400;500&family=Caveat:wght@400..700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* current page: the Join us button */
+.nav .btn[aria-current="page"]{box-shadow:0 0 0 3px var(--night),0 0 0 4px var(--gold)}
+
+/* ---------- intro + whatsapp ---------- */
+.intro{position:relative;overflow:hidden;padding-block:clamp(52px,8vw,110px) clamp(64px,8vw,120px);background:linear-gradient(180deg,var(--night),var(--ivory))}
+.intro .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(40px,6vw,90px);align-items:center}
+@media (max-width:920px){.intro .wrap{grid-template-columns:minmax(0,1fr)}}
+.intro-copy{display:flex;flex-direction:column;gap:28px;min-width:0}
+.intro h1{font-size:clamp(3rem,7.8vw,6.4rem);line-height:.92;letter-spacing:-.02em}
+.intro h1 em{font-weight:400;color:var(--rose)}
+.intro .lead{color:var(--muted);font-size:1.1rem;max-width:32em}
+.intro .hand{font-size:clamp(1.4rem,2.4vw,1.8rem);transform:rotate(-3deg);display:inline-block;margin-top:-6px}
+
+.wa-card{position:relative;background:var(--olive);border-radius:32px;padding:14px 14px clamp(26px,3.4vw,40px);box-shadow:0 50px 90px -45px var(--shadow);min-width:0}
+.wa-photo{aspect-ratio:16/10;border-radius:999px 999px 20px 20px;overflow:hidden}
+.wa-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.wa-body{display:flex;flex-direction:column;gap:18px;padding:clamp(22px,3vw,30px) clamp(12px,2.4vw,26px) 0}
+.wa-top{display:flex;align-items:center;gap:12px}
+.wa-top .sun{width:26px;height:26px;color:var(--peach)}
+.wa-card h2{font-size:clamp(2.4rem,4.6vw,3.6rem);line-height:.95;letter-spacing:-.02em;font-weight:400}
+.wa-card h2 em{font-style:italic;color:var(--peach)}
+.wa-card p{color:var(--cream-text);max-width:30em}
+.btn-wa{justify-content:center;width:100%;font-size:.86rem;padding:1.35em 1.6em;white-space:normal;text-align:center;margin-top:6px}
+.btn-wa svg{width:22px;height:22px;flex:none}
+
+/* ---------- waitlist / proof / faq ---------- */
+.join-main{padding-block:clamp(80px,10vw,140px)}
+section.join-main{background:linear-gradient(180deg,var(--ivory),var(--sage))}
+.join-main .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,96px);align-items:start}
+@media (max-width:920px){.join-main .wrap{grid-template-columns:minmax(0,1fr)}}
+.col{display:flex;flex-direction:column;gap:20px;min-width:0}
+.col h2{font-size:clamp(2.1rem,4vw,3.2rem);line-height:1;letter-spacing:-.02em;font-weight:400}
+.col h2 em{font-style:italic;color:var(--rose)}
+.col .gap{height:clamp(24px,4vw,44px)}
+
+.wait-card{background:var(--paper);border-radius:28px;padding:clamp(26px,4vw,48px);box-shadow:0 50px 90px -50px var(--shadow),0 0 0 1px var(--line);display:flex;flex-direction:column;gap:20px;position:relative}
+.wait-card::before{content:"";position:absolute;top:-13px;left:50%;width:104px;height:26px;transform:translateX(-50%) rotate(-3deg);background:rgba(236,196,178,.85)}
+.wait-card h3{font-size:clamp(2rem,3.6vw,2.7rem);line-height:1;letter-spacing:-.025em;font-weight:400}
+.wait-card h3 em{font-style:italic;color:var(--gold)}
+.wait-card > p{color:var(--muted)}
+.form{display:flex;flex-direction:column;gap:18px;transition:opacity .3s}
+.field{display:flex;flex-direction:column;gap:8px;min-width:0}
+.field label{font-family:var(--f-mono);font-size:0.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mauve)}
+.input{font:inherit;font-size:1rem;color:var(--text);background:var(--ivory);border:1px solid rgba(107,45,69,.22);border-radius:14px;padding:.95em 1.1em;width:100%;min-width:0;transition:border-color .2s,box-shadow .2s,background-color .2s;-webkit-appearance:none;appearance:none}
+.input::placeholder{color:var(--muted);opacity:.65}
+.input:hover{border-color:rgba(107,45,69,.42)}
+.input:focus{outline:none;border-color:var(--gold);background-color:var(--paper);box-shadow:0 0 0 4px rgba(107,45,69,.14)}
+.input:focus-visible{outline:none}
+.input:user-invalid{border-color:var(--rose);box-shadow:0 0 0 4px rgba(173,95,87,.12)}
+select.input{padding-right:2.8em;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none' stroke='%236b2d45' stroke-width='1.3'%3E%3Cpath d='M3 5.5l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1.1em center}
+.row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+@media (max-width:560px){.row2{grid-template-columns:minmax(0,1fr)}}
+button.btn{border:0;cursor:pointer}
+.form .btn{justify-content:center;width:100%;margin-top:6px}
+.form-success{background:var(--blush);color:var(--ink);border-radius:18px;padding:26px 24px;font-family:var(--f-display);font-size:1.3rem;line-height:1.4;text-align:center;transition:opacity .5s}
+.form-success[hidden]{display:none}
+
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,2vw,20px)}
+.stat{border-radius:999px 999px 22px 22px;padding:clamp(36px,5vw,56px) 16px clamp(24px,3vw,32px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;box-shadow:0 30px 60px -40px var(--shadow);min-width:0}
+.stat.plum{background:var(--wine)}
+.stat.olive{background:var(--olive)}
+.stat .sun{width:26px;height:26px;color:var(--peach)}
+.stat-num{font-family:var(--f-display);font-style:italic;font-size:clamp(3rem,7vw,4.8rem);line-height:.9;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat-label{font-family:var(--f-mono);font-size:0.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-text)}
+
+.faq{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item h3{margin:0;font-size:inherit;font-weight:inherit}
+.faq-q{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 4px;font-family:var(--f-display);font-size:clamp(1.2rem,2vw,1.42rem);line-height:1.3;color:var(--text);transition:color .2s}
+.faq-q:hover{color:var(--gold)}
+.faq-q:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:6px}
+.plus{position:relative;flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);transition:background .3s,border-color .3s}
+.plus::before,.plus::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1px;background:currentColor;transform:translate(-50%,-50%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.plus::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq-item.open .plus{background:var(--gold);border-color:var(--gold);color:var(--cream-text)}
+.faq-item.open .plus::after{transform:translate(-50%,-50%) rotate(0)}
+.faq-a{display:grid;grid-template-rows:1fr;transition:grid-template-rows .4s cubic-bezier(.2,.8,.2,1)}
+.faq-a > div{overflow:hidden}
+.faq-a p{padding:0 4px 24px;color:var(--muted);max-width:38em}
+.js .faq-item:not(.open) .faq-a{grid-template-rows:0fr}
+.js .faq-item:not(.open) .faq-a > div{visibility:hidden;transition:visibility 0s .4s}
+</style>
+</head>
+<body>
+
+<nav class="nav band" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/logo-sm.png" alt="Rewrite the Rules"><span>Rewrite the Rules</span></a>
+    <ul>
+      <li><a href="manifesto.html">Manifesto</a></li>
+      <li><a href="founder.html">Founder</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="blog.html">Journal</a></li>
+    </ul>
+    <a class="btn btn-gold" href="join.html" aria-current="page">Join us</a>
+  </div>
+</nav>
+
+<header class="intro band">
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="intro-copy">
+      <div class="eyebrow">Connect Today</div>
+      <h1>Take your place in <em>the circle.</em></h1>
+      <p class="lead">No gatekeeping. No complex application reviews. Connect directly on WhatsApp or leave your email for upcoming meetup schedules.</p>
+      <div class="hero-meta"><span><b>Free</b> to join</span><span>Women only</span><span>Raipur &amp; online</span></div>
+    </div>
+
+    <aside class="wa-card on-dark" aria-labelledby="wa-title">
+      <div class="wa-photo"><img src="assets/meetup.jpg" alt="Women sharing chai and conversation at a Rewrite the Rules meetup" width="1024" height="1024"></div>
+      <div class="wa-body">
+        <div class="wa-top"><svg class="sun" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><circle cx="16" cy="16" r="5"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4M7.5 7.5l2.8 2.8M21.7 21.7l2.8 2.8M7.5 24.5l2.8-2.8M21.7 10.3l2.8-2.8"/></svg><span class="eyebrow">Instant Connection</span></div>
+        <h2 id="wa-title">Join on <em>WhatsApp</em></h2>
+        <p>Skip the sign-up form. Connect directly with our core community channel in just two taps. This is where we announce meetup locations and session details.</p>
+        <a href="https://chat.whatsapp.com/JGxNVN498TELuokR7WVNBc" target="_blank" rel="noopener" class="btn btn-gold btn-wa">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.508-.086 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span>Join Community Channel</span>
+        </a>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<section class="join-main band light">
+  <div class="wrap">
+    <div class="col">
+      <div class="wait-card">
+        <div class="eyebrow">Not in Raipur?</div>
+        <h3>National <em>Waitlist</em></h3>
+        <p>Not in our active cities? Tell us where you are based. We'll alert you as soon as a chapter is starting in your area.</p>
+
+        <form id="joinWaitlistForm" class="form">
+          <div class="field">
+            <label for="waitlistName">Your Name</label>
+            <input type="text" id="waitlistName" name="name" class="input" placeholder="Rhea Sen" autocomplete="name" required>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="waitlistEmail">Email Address</label>
+              <input type="email" id="waitlistEmail" name="email" class="input" placeholder="rhea@gmail.com" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="waitlistPhone">WhatsApp Number</label>
+              <input type="tel" id="waitlistPhone" name="phone" class="input" placeholder="9876543210" autocomplete="tel" inputmode="tel" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="waitlistCity">Your City</label>
+            <select id="waitlistCity" name="city" class="input" required>
+              <option value="" disabled selected>Select your location</option>
+              <option value="Raipur">Online / Active Chapter</option>
+              <option value="Delhi">Delhi / NCR</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Bangalore">Bangalore</option>
+              <option value="Pune">Pune</option>
+              <option value="Other">Other City</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-gold">Register Interest <span class="arr" aria-hidden="true">→</span></button>
+        </form>
+
+        <div class="form-success" id="waitlistSuccess" role="status" tabindex="-1" hidden>
+          🎉 Application Received. We will contact you when expansion starts!
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="eyebrow">Metrics &amp; Proof</div>
+      <h2>The numbers <em>behind us</em></h2>
+      <div class="stats">
+        <div class="stat plum on-dark">
+          <svg class="sun" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><circle cx="16" cy="16" r="5"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4M7.5 7.5l2.8 2.8M21.7 21.7l2.8 2.8M7.5 24.5l2.8-2.8M21.7 10.3l2.8-2.8"/></svg>
+          <div class="stat-num" data-target="150">150+</div>
+          <div class="stat-label">Members Strong</div>
+        </div>
+        <div class="stat olive on-dark">
+          <svg class="sun" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><circle cx="16" cy="16" r="5"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4M7.5 7.5l2.8 2.8M21.7 21.7l2.8 2.8M7.5 24.5l2.8-2.8M21.7 10.3l2.8-2.8"/></svg>
+          <div class="stat-num" data-target="45">45+</div>
+          <div class="stat-label">Gatherings Run</div>
+        </div>
+      </div>
+
+      <div class="gap" aria-hidden="true"></div>
+
+      <div class="eyebrow">Addressing Doubts</div>
+      <h2>Common <em>Objections</em></h2>
+      <div class="faq" id="faq">
+        <div class="faq-item">
+          <h3><button type="button" class="faq-q" id="faq-q1" aria-expanded="false" aria-controls="faq-a1"><span>Is this community really free?</span><span class="plus" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p>Yes. The basic community access, group discussions, and local chat hubs are completely free. We do this to build a solid foundation. In the future, we might introduce paid premium tiers for overnight outdoor trips or high-profile somatic retreats—but core participation will remain free.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <h3><button type="button" class="faq-q" id="faq-q2" aria-expanded="false" aria-controls="faq-a2"><span>Who attends these gatherings?</span><span class="plus" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2"><div><p>If you identify as a woman and are 18+, you belong here. Our current circles include students, artists, business owners, corporate professionals, and therapists. The only prerequisite is showing up with a respectful, open attitude.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <h3><button type="button" class="faq-q" id="faq-q3" aria-expanded="false" aria-controls="faq-a3"><span>I'm nervous about showing up alone.</span><span class="plus" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p>90% of our members show up alone to their first session! Riya and early community moderators structure our circles with somatic icebreakers specifically to ensure no one feels like an outsider. Within 5 minutes, you will feel completely at home.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="band">
+  <div class="wrap">
+    <div class="f-brand">
+      <img src="assets/logo-sm.png" alt="Rewrite the Rules logo">
+      <p>A safe space for women to connect, heal, grow and become who they were always meant to be.</p>
+    </div>
+    <div>
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="manifesto.html">Manifesto</a></li>
+        <li><a href="founder.html">Founder story</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+        <li><a href="blog.html">Journal</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Join us</h4>
+      <ul>
+        <li><a href="https://chat.whatsapp.com/JGxNVN498TELuokR7WVNBc">WhatsApp community</a></li>
+        <li><a href="https://www.instagram.com/rewritetherules_riya">Instagram · @rewritetherules_riya</a></li>
+        <li><a href="join.html">Find your circle</a></li>
+      </ul>
+    </div>
+    <div class="f-bottom"><span>© 2026 Rewrite the Rules</span><span>Made with fire, for women everywhere.</span></div>
+  </div>
+</footer>
+
+<div class="sound" id="sound">
+  <button type="button" id="sound-btn" aria-pressed="false" aria-label="Play soft music"><span class="bars" aria-hidden="true"><span></span><span></span><span></span><span></span></span></button>
+  <span class="hint" id="sound-hint">Tap anywhere for soft music ♪</span>
+</div>
+
+<script src="assets/music.js"></script>
+<script src="assets/nav.js"></script>
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // FAQ accordion: one answer open at a time.
+  var items=[].slice.call(document.querySelectorAll('.faq-item'));
+  items.forEach(function(item){
+    var q=item.querySelector('.faq-q');
+    q.addEventListener('click',function(){
+      var open=!item.classList.contains('open');
+      items.forEach(function(o){o.classList.remove('open');o.querySelector('.faq-q').setAttribute('aria-expanded','false')});
+      if(open){item.classList.add('open');q.setAttribute('aria-expanded','true')}
+    });
+  });
+
+  // Stat counters: count up once when they scroll into view.
+  var counters=[].slice.call(document.querySelectorAll('[data-target]'));
+  if(!reduce&&'IntersectionObserver' in window){
+    var run=function(el){
+      var target=parseInt(el.getAttribute('data-target'),10),start=performance.now(),D=1800;
+      if(isNaN(target))return;
+      (function tick(now){
+        var p=Math.min((now-start)/D,1),e=1-Math.pow(1-p,3);
+        el.textContent=Math.round(e*target)+'+';
+        if(p<1)requestAnimationFrame(tick);else el.textContent=target+'+';
+      })(start);
+    };
+    var io=new IntersectionObserver(function(entries,obs){
+      entries.forEach(function(en){if(en.isIntersecting){run(en.target);obs.unobserve(en.target)}});
+    },{threshold:.3});
+    counters.forEach(function(c){c.textContent='0+';io.observe(c)});
+  }
+
+  // Waitlist form: same behaviour as before (no endpoint yet, details are only logged),
+  // then the form fades out and the confirmation fades in.
+  var form=document.getElementById('joinWaitlistForm'),ok=document.getElementById('waitlistSuccess');
+  if(form&&ok){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var data={
+        name:document.getElementById('waitlistName').value.trim(),
+        email:document.getElementById('waitlistEmail').value.trim(),
+        phone:document.getElementById('waitlistPhone').value.trim(),
+        city:document.getElementById('waitlistCity').value
+      };
+      console.log('Rewrite the Rules - Registration submitted:',data);
+      form.style.opacity='0';
+      setTimeout(function(){
+        form.hidden=true;form.style.display='none';
+        ok.hidden=false;ok.style.opacity='0';
+        requestAnimationFrame(function(){ok.style.opacity='1';ok.focus({preventScroll:true})});
+      },reduce?0:300);
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

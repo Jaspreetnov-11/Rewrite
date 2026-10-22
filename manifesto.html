@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Manifesto — Rewrite the Rules | We didn't come here to fit in</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta name="description" content="Discover our rules of engagement. Reject polite silence, embrace radical sisterhood, and rewrite the script on your own terms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Hanken+Grotesk:wght@400;500;600&family=DM+Mono:wght@400;500&family=Caveat:wght@400..700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* current page in nav */
+.nav ul a[aria-current="page"]{color:var(--text);text-decoration:underline;text-decoration-color:var(--rose);text-decoration-thickness:1px;text-underline-offset:8px}
+
+/* ---------- intro: a charter heading under a rising sun ---------- */
+.m-hero{position:relative;overflow:hidden;text-align:center;padding-block:clamp(64px,10vw,140px) clamp(72px,9vw,120px);background:linear-gradient(180deg,var(--night),var(--ivory))}
+.m-hero .wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:28px}
+.m-hero .rise{width:clamp(96px,14vw,150px);height:auto;color:var(--rose);opacity:.85}
+.m-hero h1{font-size:clamp(2.9rem,8.4vw,7.2rem);line-height:.95;letter-spacing:-.02em;max-width:11em}
+.m-hero h1 em{font-weight:400;color:var(--rose)}
+.burn{position:relative;display:inline-block}
+.burn::after{content:"";position:absolute;left:2%;right:-2%;bottom:-.04em;height:.05em;background:var(--rose);border-radius:4px;opacity:.7;transform:rotate(-2deg);transform-origin:left;animation:m-under .9s cubic-bezier(.7,0,.2,1) .8s both}
+@keyframes m-under{from{transform:rotate(-2deg) scaleX(0)}}
+.m-hero .lede{max-width:36em;color:var(--muted);font-size:clamp(1.05rem,1.6vw,1.2rem)}
+.m-hero .marks{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px;font-family:var(--f-mono);font-size:0.80rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.m-hero .marks span::before{content:"✦";color:var(--gold);margin-right:.7em}
+
+/* ---------- the statement: plum block, one long breath ---------- */
+.statement{background:var(--wine);padding-block:clamp(80px,11vw,150px);position:relative;overflow:hidden}
+.statement .wrap{max-width:1040px;display:flex;flex-direction:column;gap:34px;position:relative}
+.statement .sun{width:44px;height:44px;color:var(--peach)}
+.statement blockquote{margin:0;position:relative}
+.statement blockquote p{font-family:var(--f-display);font-weight:400;font-size:clamp(1.65rem,3.9vw,3.2rem);line-height:1.22;letter-spacing:-.015em;text-wrap:pretty}
+.statement blockquote p em{color:var(--blush)}
+.statement figcaption{display:flex;align-items:center;gap:16px;font-family:var(--f-mono);font-size:0.85rem;letter-spacing:.18em;text-transform:uppercase;color:var(--peach)}
+.statement figcaption::before{content:"";width:48px;height:1px;background:currentColor}
+
+/* ---------- the articles: old rule struck, new rule handwritten ---------- */
+.articles{background:linear-gradient(180deg,var(--ivory),var(--sage));padding-block:clamp(80px,10vw,140px)}
+.articles header{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;margin-bottom:clamp(44px,6vw,76px)}
+.articles h2{font-size:clamp(2.5rem,6vw,5rem);letter-spacing:-.02em;line-height:.98}
+.articles h2 em{font-weight:400;color:var(--rose)}
+.articles header p{color:var(--muted);max-width:34em}
+.articles .hint{font-family:var(--f-hand);color:var(--rose);font-size:1.40rem;transform:rotate(-2deg);font-weight:600}
+.charter{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.article{border-bottom:1px solid var(--line)}
+.article button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:minmax(0,.32fr) minmax(0,1fr) 56px minmax(0,1fr);gap:clamp(18px,3vw,44px);align-items:center;width:100%;padding:clamp(32px,4.4vw,56px) clamp(8px,1.4vw,20px);border-radius:10px;transition:background .5s}
+.article button:hover,.article.done button{background:rgba(255,250,245,.55)}
+.article button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.article .n{font-family:var(--f-display);font-style:italic;font-weight:400;font-size:clamp(3.4rem,7vw,6.2rem);line-height:.8;color:var(--rose);opacity:.55;letter-spacing:-.02em}
+.article .old,.article .new{display:flex;flex-direction:column;gap:12px;min-width:0}
+.article .tag{font-family:var(--f-mono);font-size:0.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mauve)}
+.article .h{display:block;font-family:var(--f-display)}
+.article .old .h{font-size:clamp(1.45rem,2.6vw,2.1rem);line-height:1.1;font-weight:400;position:relative;transition:color .6s}
+.article .old .h span{position:relative;background-image:linear-gradient(var(--ink),var(--ink));background-repeat:no-repeat;background-size:0% 3px;background-position:0 58%;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size .6s cubic-bezier(.7,0,.2,1)}
+.article .old p{color:var(--muted);font-size:.98rem;transition:opacity .6s}
+.article .arrow{width:48px;height:48px;color:var(--rose);justify-self:center;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.article .new .h{font-family:var(--f-hand);font-size:clamp(2rem,3.6vw,2.9rem);line-height:1.05;color:var(--rose);transform:rotate(-2deg);transform-origin:left;letter-spacing:0;font-weight:600}
+.article .new p{color:var(--text);font-size:1rem}
+/* with JS the rewrite waits for a hover, focus or tap */
+.js .article .new .h{clip-path:inset(-20% 110% -30% -10%);transition:clip-path 1s steps(18,end) .3s}
+.js .article .new p{opacity:0;transform:translateY(8px);transition:opacity .6s .8s,transform .6s .8s}
+.js .article .new .tag{opacity:.35;transition:opacity .4s}
+.article.done .old .h,.no-js .article .old .h{color:var(--muted)}
+.article.done .old .h span,.no-js .article .old .h span{background-size:100% 3px}
+.article.done .old p{opacity:.7}
+.article.done .arrow{transform:rotate(90deg)}
+.js .article.done .new .h{clip-path:inset(-20% -10% -30% -10%)}
+.js .article.done .new p{opacity:1;transform:none}
+.js .article.done .new .tag{opacity:1}
+@media (max-width:860px){
+  .article button{grid-template-columns:minmax(0,1fr);gap:18px;padding:36px 4px}
+  .article .n{font-size:3.4rem}
+  .article .arrow{justify-self:start;width:38px;height:38px;transform:rotate(90deg)}
+  .article.done .arrow{transform:rotate(180deg)}
+}
+
+/* ---------- living manifesto: olive block with an arch ---------- */
+.living{background:var(--olive);padding-block:clamp(80px,10vw,140px)}
+.living .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(40px,7vw,110px);align-items:center}
+.living-copy{display:flex;flex-direction:column;gap:24px;min-width:0}
+.living h2{font-size:clamp(2.6rem,6vw,5rem);line-height:.96;letter-spacing:-.02em}
+.living h2 em{font-weight:400;color:var(--blush)}
+.living p{color:var(--muted);max-width:30em;font-size:1.08rem}
+.living .sun{width:40px;height:40px;color:var(--peach)}
+.living .arch-wrap{max-width:400px}
+.living .arch{border-color:var(--line)}
+.living .arch-tag{background:var(--paper);color:var(--rose)}
+@media (max-width:900px){.living .wrap{grid-template-columns:minmax(0,1fr)}.living .arch-wrap{order:-1;max-width:320px}}
+@media (max-width:520px){.living .arch-tag{right:0}}
+
+@media (prefers-reduced-motion:reduce){
+  .js .article .new .h{clip-path:none}
+  .js .article .new p{opacity:1;transform:none}
+}
+</style>
+</head>
+<body class="no-js">
+<script>document.body.className='js';</script>
+
+<nav class="nav band" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/logo-sm.png" alt="Rewrite the Rules"><span>Rewrite the Rules</span></a>
+    <ul>
+      <li><a href="manifesto.html" aria-current="page">Manifesto</a></li>
+      <li><a href="founder.html">Founder</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="blog.html">Journal</a></li>
+    </ul>
+    <a class="btn btn-gold" href="join.html">Join us</a>
+  </div>
+</nav>
+
+<header class="m-hero band">
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <svg class="rise" viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M30 56a30 30 0 0 1 60 0"/><path d="M8 56h104"/><path d="M60 8v10M24 22l7 7M96 22l-7 7M10 44h9M110 44h-9M38 12l4 9M82 12l-4 9"/></svg>
+    <div class="eyebrow">Our Manifesto</div>
+    <h1>The scripts we choose to <em class="burn">burn.</em></h1>
+    <p class="lede">We believe that the rules handed down to women—be polite, stay small, heal in quiet chambers, compete with one another—are obsolete. It's time to build a new code.</p>
+    <div class="marks"><span>Three articles</span><span>Written in circle</span><span>Practised every gathering</span></div>
+  </div>
+</header>
+
+<section class="statement band on-dark" aria-label="Manifesto statement">
+  <figure class="wrap" style="margin-block:0">
+    <svg class="sun" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><circle cx="16" cy="16" r="5"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4M7.5 7.5l2.8 2.8M21.7 21.7l2.8 2.8M7.5 24.5l2.8-2.8M21.7 10.3l2.8-2.8"/></svg>
+    <blockquote><p>"We didn't come here to ask for permission, to fit into a cage, or to dim our light so others feel comfortable. We came to <em>breathe freely, heal out loud, and write our own rules.</em>"</p></blockquote>
+    <figcaption>Rewrite the Rules Community</figcaption>
+  </figure>
+</section>
+
+<section class="articles band" id="rules">
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">Flipping the scripts</div>
+      <h2>Hover to rewrite <em>the code.</em></h2>
+      <p>These are the cultural expectations we are actively discarding, and what we choose to replace them with.</p>
+      <span class="hint" aria-hidden="true">hover or tap each rule ↓</span>
+    </header>
+
+    <ol class="charter" id="charter">
+      <li class="article"><button type="button" aria-pressed="false">
+        <span class="n" aria-hidden="true">01</span>
+        <span class="old"><span class="tag">The old rule</span><span class="h"><span>"Be polite and fit in."</span></span><p>The age-old code of staying agreeable, keeping quiet, and adapting yourself to make the room comfortable.</p></span>
+        <svg class="arrow" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="M15 24h18M27 18l6 6-6 6"/></svg>
+        <span class="new"><span class="tag">Rewritten</span><span class="h">Take up space.</span><p>We choose unapologetic expression. Speak your mind, live on your own terms, and take up the space you deserve.</p></span>
+      </button></li>
+
+      <li class="article"><button type="button" aria-pressed="false">
+        <span class="n" aria-hidden="true">02</span>
+        <span class="old"><span class="tag">The old rule</span><span class="h"><span>"Heal behind closed doors."</span></span><p>The expectation to hide your struggles, keep your breakdowns private, and present a perfect façade.</p></span>
+        <svg class="arrow" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="M15 24h18M27 18l6 6-6 6"/></svg>
+        <span class="new"><span class="tag">Rewritten</span><span class="h">Heal out loud.</span><p>We choose vulnerability. We share our stories, process our weights in community, and rebuild together without shame.</p></span>
+      </button></li>
+
+      <li class="article"><button type="button" aria-pressed="false">
+        <span class="n" aria-hidden="true">03</span>
+        <span class="old"><span class="tag">The old rule</span><span class="h"><span>"Compete to survive."</span></span><p>The toxic narrative that other women are your rivals and there is only room for one at the top.</p></span>
+        <svg class="arrow" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="M15 24h18M27 18l6 6-6 6"/></svg>
+        <span class="new"><span class="tag">Rewritten</span><span class="h">Radical Sisterhood.</span><p>We choose collaboration. We lift as we climb, share opportunities, and protect this community as a zero-judgment zone.</p></span>
+      </button></li>
+    </ol>
+  </div>
+</section>
+
+<section class="living band on-dark" id="living">
+  <div class="wrap">
+    <div class="living-copy">
+      <svg class="sun" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><circle cx="16" cy="16" r="5"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4M7.5 7.5l2.8 2.8M21.7 21.7l2.8 2.8M7.5 24.5l2.8-2.8M21.7 10.3l2.8-2.8"/></svg>
+      <div class="eyebrow">A Living Manifesto</div>
+      <h2>This isn't just <em>theory.</em></h2>
+      <p>We practice these rules at every meetup, workshop, and conversation. Join the circle and feel the shift yourself.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="join.html">Join the Circle <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="experiences.html">How we gather</a>
+      </div>
+    </div>
+    <div class="arch-wrap">
+      <div class="arch"><img src="assets/workshop.jpg" alt="Women at a Rewrite the Rules workshop" loading="lazy"></div>
+      <div class="arch-tag">practised, not preached</div>
+    </div>
+  </div>
+</section>
+
+<footer class="band">
+  <div class="wrap">
+    <div class="f-brand">
+      <img src="assets/logo-sm.png" alt="Rewrite the Rules logo">
+      <p>A safe space for women to connect, heal, grow and become who they were always meant to be.</p>
+    </div>
+    <div>
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="manifesto.html">Manifesto</a></li>
+        <li><a href="founder.html">Founder story</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+        <li><a href="blog.html">Journal</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Join us</h4>
+      <ul>
+        <li><a href="https://chat.whatsapp.com/JGxNVN498TELuokR7WVNBc">WhatsApp community</a></li>
+        <li><a href="https://www.instagram.com/rewritetherules_riya">Instagram · @rewritetherules_riya</a></li>
+        <li><a href="join.html">Find your circle</a></li>
+      </ul>
+    </div>
+    <div class="f-bottom"><span>© 2026 Rewrite the Rules</span><span>Made with fire, for women everywhere.</span></div>
+  </div>
+</footer>
+
+<div class="sound" id="sound">
+  <button type="button" id="sound-btn" aria-pressed="false" aria-label="Play soft music"><span class="bars" aria-hidden="true"><span></span><span></span><span></span><span></span></span></button>
+  <span class="hint" id="sound-hint">Tap anywhere for soft music ♪</span>
+</div>
+
+<script src="assets/music.js"></script>
+<script src="assets/nav.js"></script>
+<script>
+(function(){
+  // Each article: hover or focus rewrites it, a tap toggles it.
+  // If nobody touches them, they rewrite themselves shortly after scrolling into view.
+  var items=[].slice.call(document.querySelectorAll('#charter .article'));
+  var mq=window.matchMedia||function(){return{matches:false}};
+  var reduce=mq('(prefers-reduced-motion: reduce)').matches;
+  var canHover=mq('(hover: hover)').matches;
+  items.forEach(function(li){
+    var b=li.querySelector('button');
+    new MutationObserver(function(){b.setAttribute('aria-pressed',li.classList.contains('done')?'true':'false')}).observe(li,{attributes:true,attributeFilter:['class']});
+    if(canHover){
+      b.addEventListener('mouseenter',function(){li.classList.add('done')});
+    }
+    b.addEventListener('focus',function(){li.classList.add('done')});
+    b.addEventListener('click',function(e){
+      // keyboard and touch toggle; a mouse click after hover keeps it rewritten
+      if(e.detail===0||!canHover)li.classList.toggle('done');
+      else li.classList.add('done');
+    });
+  });
+  if(reduce){items.forEach(function(li){li.classList.add('done')});return;}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){if(en.isIntersecting){var t=en.target;setTimeout(function(){t.classList.add('done')},canHover?1600:600);io.unobserve(t);}});
+    },{threshold:.45});
+    items.forEach(function(li){io.observe(li)});
+  }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Experiences & Circles — Rewrite the Rules</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta name="description" content="Explore our event formats . From somatic movement and art circles to outdoor trips and raw conversations over tea.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Experiences & Circles — Rewrite the Rules">
+<meta property="og:description" content="Explore our event formats . From somatic movement and art circles to outdoor trips and raw conversations over tea.">
+<meta property="og:image" content="https://www.rewritetherules.in/assets/workshop.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Hanken+Grotesk:wght@400;500;600&family=DM+Mono:wght@400;500&family=Caveat:wght@400..700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* current page in nav */
+.nav ul a[aria-current="page"]{color:var(--text);text-decoration:underline;text-decoration-color:var(--rose);text-decoration-thickness:1px;text-underline-offset:9px}
+
+/* ---------- intro ---------- */
+.intro{position:relative;overflow:hidden;padding-block:clamp(56px,8vw,112px) clamp(56px,7vw,96px);background:linear-gradient(180deg,var(--night),var(--ivory))}
+.intro .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.8fr);gap:clamp(40px,6vw,96px);align-items:end}
+@media (max-width:900px){.intro .wrap{grid-template-columns:minmax(0,1fr)}}
+.intro-copy{display:flex;flex-direction:column;gap:26px;min-width:0}
+.intro h1{font-size:clamp(3rem,8.2vw,6.8rem);line-height:.92;letter-spacing:-.02em}
+.intro h1 em{font-weight:400;color:var(--rose)}
+.intro .lead{color:var(--muted);font-size:1.1rem;max-width:34em}
+.intro .lead strong{color:var(--text);font-weight:500}
+.index-card{background:var(--paper);border-radius:6px;padding:26px 24px 18px;box-shadow:0 40px 80px -40px var(--shadow),0 0 0 1px var(--line);transform:rotate(1.5deg);min-width:0}
+.index-head{display:flex;justify-content:space-between;gap:12px;font-family:var(--f-mono);font-size:0.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.index-list{list-style:none;margin:0;padding:0}
+.index-list a{display:grid;grid-template-columns:2.2em minmax(0,1fr) auto;gap:10px;align-items:baseline;padding:14px 2px;border-top:1px solid var(--line);text-decoration:none;transition:padding .3s,color .3s}
+.index-list .n{font-family:var(--f-mono);font-size:0.80rem;color:var(--rose)}
+.index-list .t{font-family:var(--f-display);font-size:1.18rem;line-height:1.2}
+.index-list .f{font-family:var(--f-mono);font-size:0.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.index-list a:hover{padding-left:10px;color:var(--gold)}
+
+/* ---------- formats: stacked cards in olive / blush / plum / beige ---------- */
+.formats-sec{padding-block:clamp(64px,8vw,120px);background:var(--ivory)}
+.fmt-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:clamp(22px,3vw,36px)}
+.fmt{position:relative;border-radius:30px;padding:clamp(26px,4.4vw,60px);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,5vw,80px);align-items:center;box-shadow:0 -10px 60px -40px var(--shadow),0 40px 80px -50px var(--shadow);overflow:hidden;scroll-margin-top:96px;color:var(--text)}
+.fmt.olive{background:var(--olive)}
+.fmt.plum{background:var(--wine)}
+.fmt.blush{background:var(--blush)}
+.fmt.sage{background:var(--sage)}
+.fmt.flip .fmt-img{order:-1}
+@media (min-width:901px) and (min-height:760px){
+  .fmt{position:sticky;top:calc(88px + var(--i) * 16px)}
+}
+.fmt-copy{display:flex;flex-direction:column;gap:22px;min-width:0}
+.fmt-top{display:flex;align-items:center;gap:16px}
+.fmt-n{font-family:var(--f-display);font-style:italic;font-size:clamp(2.6rem,4vw,3.4rem);line-height:.8;color:var(--rose)}
+.fmt.on-dark .fmt-n{color:var(--peach)}
+.fmt-top .rule-line{flex:1;height:1px;background:var(--line)}
+.fmt h3{font-size:clamp(2.1rem,4.6vw,3.7rem);line-height:.98;letter-spacing:-.02em;font-weight:400}
+.fmt h3 em{font-style:italic}
+.fmt.blush h3 em,.fmt.sage h3 em{color:var(--gold)}
+.fmt.on-dark h3 em{color:var(--peach)}
+.fmt p{font-size:1.05rem;max-width:32em;color:var(--text)}
+.fmt.on-dark p{color:var(--cream-text)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.tags li{border:1px solid var(--line);border-radius:999px;padding:.55em 1.05em;font-family:var(--f-mono);font-size:0.78rem;letter-spacing:.14em;text-transform:uppercase;line-height:1.2}
+.fmt.blush .tags li,.fmt.sage .tags li{border-color:rgba(107,45,69,.28);background:rgba(255,250,245,.45)}
+.tags .status{display:inline-flex;align-items:center;gap:8px;background:var(--paper);color:var(--ink);border-color:transparent}
+.tags .status::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--rose)}
+.fmt-img{min-width:0}
+.fmt .arch{max-width:360px;margin-inline:auto;aspect-ratio:4/5;border-color:rgba(246,236,226,.35)}
+.fmt .arch img{transform:scale(var(--z,1.04));transform-origin:var(--o,50% 50%)}
+.fmt .arch:hover img{transform:scale(calc(var(--z,1.04) + .06))}
+.fmt-img .ring{position:relative;max-width:360px;margin-inline:auto}
+.fmt-img .ring::after{content:"";position:absolute;inset:-12px;border-radius:999px 999px 14px 14px;border:1px solid var(--line);pointer-events:none}
+@media (max-width:900px){
+  .fmt{grid-template-columns:minmax(0,1fr)}
+  .fmt .fmt-img{order:-1}
+  .fmt .arch,.fmt-img .ring{max-width:300px}
+}
+
+/* ---------- the divine rewrite ---------- */
+.dr{position:relative;overflow:hidden;padding-block:clamp(80px,10vw,140px);background:linear-gradient(180deg,var(--ivory),var(--peach) 35%,var(--blush));color:var(--ink);scroll-margin-top:70px}
+.dr-8{position:absolute;left:-3vw;top:4%;font-family:var(--f-display);font-style:italic;font-size:clamp(20rem,46vw,44rem);line-height:.8;color:rgba(173,95,87,.09);pointer-events:none;user-select:none}
+.dr .wrap{position:relative}
+.dr-head{text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px;margin-bottom:clamp(44px,6vw,80px)}
+.dr-head .sun{width:40px;height:40px;color:var(--rose)}
+.dr-head h2{font-size:clamp(3rem,8vw,6.6rem);line-height:.9;letter-spacing:-.02em}
+.dr-head h2 em{font-weight:400;color:var(--gold)}
+.dr-head .lead{font-family:var(--f-display);font-size:clamp(1.2rem,2vw,1.5rem);line-height:1.45;max-width:36em}
+.dr-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(40px,6vw,96px);align-items:center}
+@media (max-width:900px){.dr-grid{grid-template-columns:minmax(0,1fr)}.dr-side{order:-1}}
+.dr-card{background:var(--paper);border-radius:28px;padding:clamp(26px,4vw,52px);box-shadow:0 50px 90px -50px var(--shadow),0 0 0 1px var(--line);display:flex;flex-direction:column;gap:26px;min-width:0}
+.dr-card h3{font-size:clamp(2rem,3.6vw,2.8rem);font-weight:400;letter-spacing:-.025em;line-height:1}
+.dr-card h3 em{font-style:italic;color:var(--rose)}
+.dr-card > p{color:var(--ink-muted);max-width:36em}
+.modules{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.modules li{background:var(--paper);padding:22px 22px 24px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.modules h4{margin:0;font-family:var(--f-display);font-weight:500;font-size:1.3rem;line-height:1.15}
+.modules .m-n{display:block;font-family:var(--f-mono);font-size:0.78rem;letter-spacing:.16em;color:var(--rose);margin-bottom:6px;font-weight:400}
+.modules p{color:var(--ink-muted);font-size:.95rem;line-height:1.55}
+@media (max-width:560px){.modules{grid-template-columns:minmax(0,1fr)}}
+.inc-h{margin:0;font-family:var(--f-mono);font-weight:400;font-size:0.83rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mauve)}
+.inc{list-style:none;margin:-10px 0 0;padding:0}
+.inc li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:14px;align-items:start;padding:13px 0;border-bottom:1px solid var(--line)}
+.inc li:last-child{border-bottom:0}
+.inc svg{width:24px;height:24px;color:var(--rose);margin-top:1px}
+.dr-cta{justify-content:center;white-space:normal;text-align:center}
+.dr-side{min-width:0}
+.dr-side .flyer{max-width:380px}
+.dr-side .flyer img{width:100%;height:auto}
+
+/* ---------- moments gallery: staggered arches ---------- */
+.gallery{padding-block:clamp(80px,10vw,140px)}
+section.gallery{background:linear-gradient(180deg,var(--ivory),var(--sage))}
+.gallery header{text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;margin-bottom:clamp(44px,6vw,80px)}
+.gallery h2{font-size:clamp(2.6rem,6vw,5.2rem);letter-spacing:-.02em;line-height:.95}
+.gallery h2 em{font-weight:400;color:var(--rose)}
+.moments{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.4vw,30px);align-items:start;margin:0;padding:0;list-style:none}
+.moment{margin:0;position:relative;min-width:0}
+.moment:nth-child(even){margin-top:clamp(40px,7vw,96px)}
+.moment .frame{position:relative;overflow:hidden;aspect-ratio:3/4.3;box-shadow:0 40px 70px -40px var(--shadow)}
+.moment:nth-child(1) .frame{border-radius:999px 999px 14px 14px}
+.moment:nth-child(2) .frame{border-radius:999px}
+.moment:nth-child(3) .frame{border-radius:999px 999px 14px 14px}
+.moment:nth-child(4) .frame{border-radius:14px 14px 999px 999px}
+.moment img{width:100%;height:100%;object-fit:cover;transform:scale(1.03);transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.moment:hover img{transform:scale(1.09)}
+.moment figcaption{position:relative;z-index:1;width:max-content;max-width:100%;margin:-22px auto 0;background:var(--paper);color:var(--rose);font-family:var(--f-hand);font-size:clamp(1.05rem,1.6vw,1.3rem);line-height:1.2;padding:10px 16px;border-radius:4px;box-shadow:0 16px 30px -14px var(--shadow);transform:rotate(-3deg);text-align:center;font-weight:600}
+.moment:nth-child(even) figcaption{transform:rotate(3deg)}
+@media (max-width:760px){
+  .moments{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}
+  .moment:nth-child(even){margin-top:44px}
+  .moment figcaption{padding:8px 10px}
+}
+
+/* ---------- show up ---------- */
+.final .eyebrow{color:var(--mauve)}
+</style>
+</head>
+<body>
+
+<nav class="nav band" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/logo-sm.png" alt="Rewrite the Rules"><span>Rewrite the Rules</span></a>
+    <ul>
+      <li><a href="manifesto.html">Manifesto</a></li>
+      <li><a href="founder.html">Founder</a></li>
+      <li><a href="experiences.html" aria-current="page">Experiences</a></li>
+      <li><a href="blog.html">Journal</a></li>
+    </ul>
+    <a class="btn btn-gold" href="join.html">Join us</a>
+  </div>
+</nav>
+
+<header class="intro band">
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="intro-copy">
+      <div class="eyebrow">Our Gatherings</div>
+      <h1>How we show <em>up IRL.</em></h1>
+      <p class="lead">We gather for deep, tactile, and expressive experiences. No name tags, no corporate presentations. <strong>Just real presence and somatic action.</strong></p>
+    </div>
+    <nav class="index-card" aria-label="Meetup formats">
+      <div class="index-head"><span>The formats</span><span>04</span></div>
+      <ol class="index-list">
+        <li><a href="#somatic-movement"><span class="n">01</span><span class="t">Somatic Movement &amp; Release</span><span class="f">Active</span></a></li>
+        <li><a href="#chai-circles"><span class="n">02</span><span class="t">Chai &amp; Raw Talk Circles</span><span class="f">Active</span></a></li>
+        <li><a href="#art-expression"><span class="n">03</span><span class="t">Art &amp; Creative Expression</span><span class="f">Monthly</span></a></li>
+        <li><a href="#outdoor-outings"><span class="n">04</span><span class="t">Bold Outdoor Outings</span><span class="f">Quarterly</span></a></li>
+      </ol>
+    </nav>
+  </div>
+</header>
+
+<section class="formats-sec band" aria-label="Event formats">
+  <div class="wrap">
+    <ol class="fmt-list">
+      <li class="fmt olive on-dark" id="somatic-movement" style="--i:0">
+        <div class="fmt-copy">
+          <div class="fmt-top"><span class="fmt-n">01</span><span class="rule-line"></span><svg class="sun" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><circle cx="16" cy="16" r="5"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4M7.5 7.5l2.8 2.8M21.7 21.7l2.8 2.8M7.5 24.5l2.8-2.8M21.7 10.3l2.8-2.8"/></svg></div>
+          <h3>Somatic Movement <em>&amp; Release</em></h3>
+          <p>Certified instructions combining somatic exercises, deep breathing, and expressive dance. Built to help you release physical stress, shake off emotional weight, and ground yourself in your body's strength.</p>
+          <ul class="tags"><li>Somatic Release</li><li>Led by Riya</li><li class="status">Active</li></ul>
+        </div>
+        <div class="fmt-img"><div class="ring"><div class="arch" style="--z:1.22;--o:100% 50%"><img style="object-position:100% 50%" src="assets/workshop.jpg" alt="Movement therapy circle" width="1000" height="1000" loading="lazy"></div></div></div>
+      </li>
+
+      <li class="fmt blush flip" id="chai-circles" style="--i:1">
+        <div class="fmt-copy">
+          <div class="fmt-top"><span class="fmt-n">02</span><span class="rule-line"></span><svg class="sun" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><circle cx="16" cy="16" r="5"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4M7.5 7.5l2.8 2.8M21.7 21.7l2.8 2.8M7.5 24.5l2.8-2.8M21.7 10.3l2.8-2.8"/></svg></div>
+          <h3>Chai &amp; <em>Raw Talk</em> Circles</h3>
+          <p>Small, intimate table discussions over tea . We strip away networking jargon. Instead, we speak about ambition, heartbreaks, boundaries, and what it actually feels like to navigate your 20s and 30s as a woman.</p>
+          <ul class="tags"><li>Intimate Gatherings</li><li>Zero Judgment</li><li class="status">Active</li></ul>
+        </div>
+        <div class="fmt-img"><div class="ring"><div class="arch"><img src="assets/meetup.jpg" alt="Tea circles" width="1024" height="1024" loading="lazy"></div></div></div>
+      </li>
+
+      <li class="fmt plum on-dark" id="art-expression" style="--i:2">
+        <div class="fmt-copy">
+          <div class="fmt-top"><span class="fmt-n">03</span><span class="rule-line"></span><svg class="sun" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><circle cx="16" cy="16" r="5"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4M7.5 7.5l2.8 2.8M21.7 21.7l2.8 2.8M7.5 24.5l2.8-2.8M21.7 10.3l2.8-2.8"/></svg></div>
+          <h3>Art &amp; <em>Creative Expression</em></h3>
+          <p>Creative painting, sculpting, and journaling sessions focused entirely on the process of creation, not the final product. A space to let your subconscious speak when logical words aren't enough.</p>
+          <ul class="tags"><li>Creative Expression</li><li>Process Art</li><li class="status">Monthly</li></ul>
+        </div>
+        <div class="fmt-img"><div class="ring"><div class="arch" style="--z:1.7;--o:0% 45%"><img style="object-position:0% 50%" src="assets/workshop.jpg" alt="Art circle sessions" width="1000" height="1000" loading="lazy"></div></div></div>
+      </li>
+
+      <li class="fmt sage flip" id="outdoor-outings" style="--i:3">
+        <div class="fmt-copy">
+          <div class="fmt-top"><span class="fmt-n">04</span><span class="rule-line"></span><svg class="sun" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><circle cx="16" cy="16" r="5"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4M7.5 7.5l2.8 2.8M21.7 21.7l2.8 2.8M7.5 24.5l2.8-2.8M21.7 10.3l2.8-2.8"/></svg></div>
+          <h3>Bold <em>Outdoor</em> Outings</h3>
+          <p>Hikes, outdoor nature workshops, and weekend escapes. We expand our comfort zones, breathe clean air, and build raw trust in the wild, surrounded by sisterhood that cheers you on.</p>
+          <ul class="tags"><li>Nature Trips</li><li>Active Adventures</li><li class="status">Quarterly</li></ul>
+        </div>
+        <div class="fmt-img"><div class="ring"><div class="arch"><img src="assets/outdoor.jpg" alt="Outdoor trip" width="1000" height="1000" loading="lazy"></div></div></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="dr band" id="divine-rewrite" aria-labelledby="dr-title">
+  <div class="dr-8" aria-hidden="true">8</div>
+  <div class="wrap">
+    <header class="dr-head">
+      <svg class="sun" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><circle cx="16" cy="16" r="5"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4M7.5 7.5l2.8 2.8M21.7 21.7l2.8 2.8M7.5 24.5l2.8-2.8M21.7 10.3l2.8-2.8"/></svg>
+      <div class="eyebrow">Signature Deep-Dive</div>
+      <h2 id="dr-title">The Divine <em>Rewrite.</em></h2>
+      <p class="lead">An 8-week luxury feminine coaching experience designed to help you release emotional patterns, transform limiting beliefs, and step into your highest self-concept.</p>
+    </header>
+
+    <div class="dr-grid">
+      <div class="dr-card">
+        <div>
+          <h3>Your Next <em>Chapter</em></h3>
+        </div>
+        <p>A soft, strong, and highly structured container designed for women who are ready to rise, evolve, and rewrite their stories beautifully.</p>
+
+        <ol class="modules">
+          <li><h4><span class="m-n">1.</span>Deep Healing</h4><p>Release emotional exhaustion, old coping strategies, and people-pleasing habits.</p></li>
+          <li><h4><span class="m-n">2.</span>Mindset Rewrite</h4><p>Identify limiting beliefs and rewrite cognitive scripts for confidence and self-worth.</p></li>
+          <li><h4><span class="m-n">3.</span>Somatic Release</h4><p>Connect with your body's wisdom, setting healthy boundaries and standards.</p></li>
+          <li><h4><span class="m-n">4.</span>Luxury Lifestyle</h4><p>Design a soft, fulfilling life that completely reflects your highest standards and purpose.</p></li>
+        </ol>
+
+        <h4 class="inc-h">The Experience Includes:</h4>
+        <ul class="inc">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.7 2.7L16 9.6"/></svg><span>Weekly Coaching Calls (Intimate Group &amp; Somatic integration)</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.7 2.7L16 9.6"/></svg><span>Transformational Workbooks &amp; Somatic Exercise Guides</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.7 2.7L16 9.6"/></svg><span>Direct Voice Note Support with Riya &amp; Sisterhood Circle access</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.7 2.7L16 9.6"/></svg><span>Lifetime access to course modules &amp; audio materials</span></li>
+        </ul>
+
+        <a href="join.html" class="btn btn-gold dr-cta">Apply to The Divine Rewrite <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="dr-side">
+        <div class="flyer">
+          <img src="assets/divine-rewrite-flyer-sm.jpg" alt="The Divine Rewrite Coaching Curriculum Flyer" width="666" height="1000" loading="lazy">
+          <div class="seal"><span><b>8</b>week<br>journey</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery band light" aria-labelledby="g-title">
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">Moments Gallery</div>
+      <h2 id="g-title">Capturing the <em>energy.</em></h2>
+    </header>
+    <div class="moments">
+      <figure class="moment"><div class="frame"><img src="assets/meetup.jpg" alt="Chai conversation" width="1024" height="1024" loading="lazy"></div><figcaption>Chai &amp; Stories ✨</figcaption></figure>
+      <figure class="moment"><div class="frame"><img src="assets/riya-banner.jpg" alt="Mindset &amp; Vision session" width="1242" height="1280" loading="lazy" style="object-position:55% 30%"></div><figcaption>Mindset &amp; Vision 💫</figcaption></figure>
+      <figure class="moment"><div class="frame"><img src="assets/outdoor.jpg" alt="Outdoor group photo" width="1000" height="1000" loading="lazy"></div><figcaption>Outdoor Escapes 🌿</figcaption></figure>
+      <figure class="moment"><div class="frame"><img src="assets/riya-stool.jpg" alt="Somatic Coaching session" width="960" height="1280" loading="lazy"></div><figcaption>Somatic Coaching 🎨</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="final band" id="show-up">
+  <div class="wrap">
+    <div class="eyebrow">Show Up</div>
+    <h2>Experience <em>the shift.</em></h2>
+    <p>Our spaces are free, open, and gatekeeper-free. Connect with our central Raipur channel to join the next meetup.</p>
+    <a class="btn btn-gold" href="join.html">Join the Circle <span class="arr">→</span></a>
+  </div>
+</section>
+
+<footer class="band">
+  <div class="wrap">
+    <div class="f-brand">
+      <img src="assets/logo-sm.png" alt="Rewrite the Rules logo">
+      <p>A safe space for women to connect, heal, grow and become who they were always meant to be.</p>
+    </div>
+    <div>
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="manifesto.html">Manifesto</a></li>
+        <li><a href="founder.html">Founder story</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+        <li><a href="blog.html">Journal</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Join us</h4>
+      <ul>
+        <li><a href="https://chat.whatsapp.com/JGxNVN498TELuokR7WVNBc">WhatsApp community</a></li>
+        <li><a href="https://www.instagram.com/rewritetherules_riya">Instagram · @rewritetherules_riya</a></li>
+        <li><a href="join.html">Find your circle</a></li>
+      </ul>
+    </div>
+    <div class="f-bottom"><span>© 2026 Rewrite the Rules</span><span>Made with fire, for women everywhere.</span></div>
+  </div>
+</footer>
+
+<div class="sound" id="sound">
+  <button type="button" id="sound-btn" aria-pressed="false" aria-label="Play soft music"><span class="bars" aria-hidden="true"><span></span><span></span><span></span><span></span></span></button>
+  <span class="hint" id="sound-hint">Tap anywhere for soft music ♪</span>
+</div>
+
+<script src="assets/music.js"></script>
+<script src="assets/nav.js"></script>
+
+</body>
+</html>
