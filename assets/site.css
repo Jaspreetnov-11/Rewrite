@@ -140,7 +140,7 @@ section.light::before{content:"✦";position:absolute;left:50%;top:0;transform:t
 .wisdom .poster{border-color:var(--ivory)}
 
 /* ---------- gathering / moon ---------- */
-.gathering{padding-block:clamp(80px,10vw,140px);background:var(--olive)}
+.gathering{padding-block:clamp(80px,10vw,140px);background:var(--olive);overflow:hidden}
 .gathering .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,7vw,100px);align-items:center}
 @media (max-width:900px){.gathering .wrap{grid-template-columns:minmax(0,1fr)}}
 .moon-stage{position:relative;aspect-ratio:1;max-width:520px;width:100%;margin-inline:auto}
@@ -306,20 +306,42 @@ footer ul a:hover{color:var(--text)}
   .rule .now{clip-path:none}
 }
 
-/* ---------- mobile menu (button added by assets/nav.js) ---------- */
-.menu-btn{display:none}
+
+
+/* ---------- phone app shell ---------- */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:vt-out .22s ease both}
+::view-transition-new(root){animation:vt-in .32s cubic-bezier(.2,.8,.2,1) both}
+@keyframes vt-out{to{opacity:0}}
+@keyframes vt-in{from{opacity:0;transform:translateY(10px)}}
+html{-webkit-tap-highlight-color:transparent}
+a,button{touch-action:manipulation}
+.tabbar{display:none}
 @media (max-width:880px){
-  .menu-btn{all:unset;cursor:pointer;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);margin-left:auto}
-  .menu-btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-  .menu-btn i{display:block;width:18px;height:1.5px;background:var(--text);position:relative;transition:background .2s}
-  .menu-btn i::before,.menu-btn i::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:var(--text);transition:transform .3s}
-  .menu-btn i::before{top:-6px}.menu-btn i::after{top:6px}
-  .nav.open .menu-btn i{background:transparent}
-  .nav.open .menu-btn i::before{transform:translateY(6px) rotate(45deg)}
-  .nav.open .menu-btn i::after{transform:translateY(-6px) rotate(-45deg)}
-  .nav .wrap{gap:12px}
-  .nav.open ul{display:flex;flex-direction:column;gap:0;position:absolute;left:0;right:0;top:100%;background:var(--night);border-bottom:1px solid var(--line);
-    padding:8px max(16px,env(safe-area-inset-right,0px)) 18px max(16px,env(safe-area-inset-left,0px));box-shadow:0 30px 40px -30px var(--shadow)}
-  .nav.open ul a{display:block;padding:14px 0;font-family:var(--f-display);font-size:1.6rem;color:var(--text);border-bottom:1px solid var(--line)}
+  .tabbar{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:fixed;z-index:80;left:0;right:0;bottom:0;view-transition-name:tabbar;
+    padding:6px max(6px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(6px,env(safe-area-inset-left,0px));
+    background:rgba(250,244,238,.88);backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);border-top:1px solid var(--line);box-shadow:0 -12px 30px -22px var(--shadow)}
+  .tabbar a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:4px 0 2px;text-decoration:none;color:var(--muted);font-size:.7rem;font-weight:500;letter-spacing:.01em;min-width:0}
+  .tabbar .ic{display:grid;place-items:center;width:52px;height:30px;border-radius:999px;transition:background .25s,transform .2s}
+  .tabbar svg{width:23px;height:23px}
+  .tabbar a[aria-current="page"]{color:var(--gold);font-weight:600}
+  .tabbar a[aria-current="page"] .ic{background:rgba(107,45,69,.12)}
+  .tabbar a:active .ic{transform:scale(.9)}
+  .has-tabbar body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+  .has-tabbar .sound{bottom:calc(84px + env(safe-area-inset-bottom,0px));right:calc(14px + env(safe-area-inset-right,0px))}
+  .sound button{width:46px;height:46px}
+  .sound .hint{font-size:.72rem;padding:.6em .9em}
+  /* compact app header */
+  .nav{view-transition-name:appbar}
+  .nav .wrap{padding-block:8px}
+  .brand img{width:38px;height:38px}
+  .nav .btn{padding:.75em 1.15em;font-size:.78rem}
+  /* tighter sections, press feedback */
+  .btn:active,.door:active,.card a:active,.rule:active{transform:scale(.97)}
+  footer{padding-block:44px 28px}
+  footer .wrap{gap:28px}
 }
-@media (min-width:881px){.home-li{display:none}}
+@media (max-width:520px){
+  body{font-size:17px}
+  .hero-ctas .btn{flex:1 1 auto;justify-content:center}
+}
